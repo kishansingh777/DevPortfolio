@@ -1,0 +1,21 @@
+
+Create a portfolio website for full stack developer. Design modern UI , i want static website I have provided resume in pdf format for details also my photos so create a proper responsive website, also add download resume option , also add contact
+Details:
+So I work at Softcon business solutions as a Full stack developer I work on ERP software project utilizing my expertise in angular for frontend development and .net webapi for backend development and SQL server for database management. My responsibilities encompass the entire development lifecycle, from designing and implementing user interfaces to creating robust APIs and handling intricate business logic. I ensure seamless communication between the frontend and backend, optimizing performance and maintaining the software's scalability and reliability. Additionally, I design and execute SQL queries and stored procedures to manage and manipulate data efficiently.
+
+### Job Description:  
+
+As a Full Stack Developer, I work on the *Smart Business Solution (ERP Software)* project, utilizing my expertise in Angular for frontend development, .NET for backend services, and SQL Server for database management. My responsibilities encompass the entire development lifecycle, from designing and implementing user interfaces to creating robust APIs and handling intricate business logic. I ensure seamless communication between the frontend and backend, optimizing performance and maintaining the software's scalability and reliability. Additionally, I design and execute SQL queries and stored procedures to manage and manipulate data efficiently.  
+
+### Roles and Responsibilities:  
+- Design and develop user interfaces using *Angular*, ensuring an intuitive and user-friendly experience.  
+- Implement frontend logic and functionality, managing state and enhancing interactivity.  
+- Develop and maintain *RESTful APIs* using *.NET*, ensuring secure and efficient data transfer between client and server.  
+- Write and optimize complex business logic for backend services.  
+- Design and execute SQL queries, stored procedures, and functions to handle data processing.  
+- Collaborate with cross-functional teams to understand requirements and translate them into technical solutions.  
+- Perform unit testing and debugging to ensure the quality and performance of the software.  
+- Optimize application performance and scalability to handle growing user demands.  
+- Maintain and update project documentation, ensuring clarity and ease of knowledge transfer.  
+- Stay updated with the latest development trends and best practices to enhance the software's functionality and user experience.
+

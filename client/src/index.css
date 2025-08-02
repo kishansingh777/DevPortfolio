@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(222, 47%, 11%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(215, 28%, 17%);
+  --muted-foreground: hsl(217, 10%, 64%);
+  --popover: hsl(222, 47%, 11%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(197, 100%, 50%);
+  --input: hsl(215, 28%, 17%);
+  --primary: hsl(197, 100%, 50%);
+  --primary-foreground: hsl(222, 47%, 11%);
+  --secondary: hsl(215, 28%, 17%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(215, 28%, 17%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(197, 100%, 50%);
+  --radius: 0.5rem;
+  
+  /* Code theme colors */
+  --code-bg: hsl(222, 47%, 11%);
+  --code-secondary: hsl(215, 28%, 17%);
+  --code-accent: hsl(197, 100%, 50%);
+  --terminal-green: hsl(142, 71%, 45%);
+  --syntax-orange: hsl(43, 96%, 56%);
+  --syntax-red: hsl(0, 84%, 60%);
+  --syntax-purple: hsl(262, 83%, 58%);
+  --syntax-blue: hsl(217, 91%, 60%);
+}
+
+.dark {
+  --background: hsl(222, 47%, 11%);
+  --foreground: hsl(0, 0%, 100%);
+  --muted: hsl(215, 28%, 17%);
+  --muted-foreground: hsl(217, 10%, 64%);
+  --popover: hsl(222, 47%, 11%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --border: hsl(197, 100%, 50%);
+  --input: hsl(215, 28%, 17%);
+  --primary: hsl(197, 100%, 50%);
+  --primary-foreground: hsl(222, 47%, 11%);
+  --secondary: hsl(215, 28%, 17%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(215, 28%, 17%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(197, 100%, 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer utilities {
+  .text-code-bg { color: var(--code-bg); }
+  .text-code-secondary { color: var(--code-secondary); }
+  .text-code-accent { color: var(--code-accent); }
+  .text-terminal-green { color: var(--terminal-green); }
+  .text-syntax-orange { color: var(--syntax-orange); }
+  .text-syntax-red { color: var(--syntax-red); }
+  .text-syntax-purple { color: var(--syntax-purple); }
+  .text-syntax-blue { color: var(--syntax-blue); }
+  
+  .bg-code-bg { background-color: var(--code-bg); }
+  .bg-code-secondary { background-color: var(--code-secondary); }
+  .bg-code-accent { background-color: var(--code-accent); }
+  .bg-terminal-green { background-color: var(--terminal-green); }
+  .bg-syntax-orange { background-color: var(--syntax-orange); }
+  .bg-syntax-red { background-color: var(--syntax-red); }
+  .bg-syntax-purple { background-color: var(--syntax-purple); }
+  .bg-syntax-blue { background-color: var(--syntax-blue); }
+  
+  .border-code-accent { border-color: var(--code-accent); }
+  .border-terminal-green { border-color: var(--terminal-green); }
+  .border-syntax-orange { border-color: var(--syntax-orange); }
+  .border-syntax-purple { border-color: var(--syntax-purple); }
+  .border-syntax-blue { border-color: var(--syntax-blue); }
+}
+
+/* Custom animations */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--code-accent); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px var(--code-accent); }
+  to { box-shadow: 0 0 20px var(--code-accent), 0 0 30px var(--code-accent); }
+}
+
+@keyframes matrix {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-typing {
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-matrix {
+  animation: matrix 20s linear infinite;
+}
+
+/* Matrix background */
+.matrix-drop {
+  position: absolute;
+  top: -100px;
+  color: var(--code-accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  animation: matrix 15s linear infinite;
+  opacity: 0.6;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--code-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--code-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-green);
+}

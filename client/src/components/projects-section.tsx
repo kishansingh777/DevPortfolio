@@ -84,14 +84,14 @@ export default function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
+                {/* <div className="flex space-x-4">
                   <Button variant="ghost" className="text-code-accent hover:text-terminal-green transition-colors font-mono p-0">
                     <i className="fas fa-eye mr-2"></i>Live Demo
                   </Button>
                   <Button variant="ghost" className="text-gray-400 hover:text-white transition-colors font-mono p-0">
                     <i className="fab fa-github mr-2"></i>Code
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

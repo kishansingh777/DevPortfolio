@@ -39,7 +39,8 @@ export default function HeroSection() {
             <div className="text-terminal-green font-mono text-lg mb-4">
               <TypingAnimation phrases={typingPhrases} />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+
+            {/* <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="text-white">Hi, I'm </span>
               <span className="text-code-accent">Kishan</span>
             </h1>
@@ -52,7 +53,22 @@ export default function HeroSection() {
             <p className="text-xl text-gray-400 mb-8 max-w-2xl">
               Passionate about crafting robust ERP solutions with Angular, .NET, and SQL Server. 
               Transforming complex business requirements into elegant digital experiences.
+            </p> */}
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6">
+              <span className="text-white">Hi, I'm </span>
+              <span className="text-code-accent">Kishan</span>
+            </h1>
+            <h2 className="text-lg md:text-2xl lg:text-3xl text-gray-300 mb-8 font-mono">
+              <span className="text-syntax-orange">const</span>{" "}
+              <span className="text-white">role</span>{" "}
+              <span className="text-syntax-orange">=</span>{" "}
+              <span className="text-terminal-green">"Full Stack Developer"</span>
+            </h2>
+            <p className="text-base md:text-xl text-gray-400 mb-8 max-w-2xl">
+              Passionate about crafting robust ERP solutions with Angular, .NET, and SQL Server. 
+              Transforming complex business requirements into elegant digital experiences.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button 
                 onClick={downloadResume}
@@ -70,10 +86,10 @@ export default function HeroSection() {
               </Button>
             </div>
             <div className="flex justify-center md:justify-start space-x-6 mt-8">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-code-accent text-2xl transition-colors duration-300 transform hover:scale-110">
+              <a href="https://github.com/kishansingh777" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-code-accent text-2xl transition-colors duration-300 transform hover:scale-110">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-code-accent text-2xl transition-colors duration-300 transform hover:scale-110">
+              <a href="https://www.linkedin.com/in/kishan-singh-478818179" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-code-accent text-2xl transition-colors duration-300 transform hover:scale-110">
                 <i className="fab fa-linkedin"></i>
               </a>
               <a href="mailto:kishansingh98337@gmail.com" className="text-gray-400 hover:text-code-accent text-2xl transition-colors duration-300 transform hover:scale-110">
@@ -93,11 +109,19 @@ export default function HeroSection() {
                   />
                 </div>
               </div>
+
               {/* Code snippets floating around */}
-              <div className="absolute -top-10 -left-10 bg-code-secondary/90 backdrop-blur-sm p-3 rounded-lg font-mono text-sm text-terminal-green animate-float" style={{animationDelay: '0s'}}>
+              {/* <div className="absolute -top-12 -left-10 bg-code-secondary/90 backdrop-blur-sm p-3 rounded-lg font-mono text-sm text-terminal-green animate-float" style={{animationDelay: '0s'}}>
                 <span className="text-syntax-orange">function</span> <span className="text-code-accent">createAwesome</span>()
               </div>
               <div className="absolute -bottom-10 -right-10 bg-code-secondary/90 backdrop-blur-sm p-3 rounded-lg font-mono text-sm text-syntax-purple animate-float" style={{animationDelay: '2s'}}>
+                <span className="text-syntax-orange">const</span> <span className="text-white">skills</span> = <span className="text-terminal-green">["Angular", ".NET"]</span>
+              </div> */}
+              {/* Code snippets floating around - Responsive positioning */}
+              <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 lg:-top-12 lg:-left-12 bg-code-secondary/90 backdrop-blur-sm p-2 md:p-3 rounded-lg font-mono text-xs md:text-sm text-terminal-green animate-float hidden sm:block" style={{animationDelay: '0s'}}>
+                <span className="text-syntax-orange">function</span> <span className="text-code-accent">createAwesome</span>()
+              </div>
+              <div className="absolute -bottom-6 -right-8 md:-bottom-10 md:-right-18 lg:-bottom-12 lg:-right-18 bg-code-secondary/90 backdrop-blur-sm p-2 md:p-3 rounded-lg font-mono text-xs md:text-sm text-syntax-purple animate-float hidden sm:block" style={{animationDelay: '2s'}}>
                 <span className="text-syntax-orange">const</span> <span className="text-white">skills</span> = <span className="text-terminal-green">["Angular", ".NET"]</span>
               </div>
             </div>

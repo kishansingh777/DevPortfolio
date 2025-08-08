@@ -10,7 +10,7 @@ export default function Navigation() {
       let current = '';
       
       sections.forEach(section => {
-        const sectionTop = section.offsetTop;
+        const sectionTop = (section as HTMLElement).offsetTop;
         if (scrollY >= (sectionTop - 200)) {
           current = section.getAttribute('id') || '';
         }
@@ -79,7 +79,7 @@ export default function Navigation() {
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center justify-center h-full space-y-8 pt-20">
           {navItems.map((item) => (
             <button
               key={item.id}

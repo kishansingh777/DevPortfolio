@@ -1,6 +1,22 @@
+import dotenv from 'dotenv';
+import path from 'path';
+
+// Load environment variables from .env file FIRST with explicit path
+const result = dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+
+console.log('Dotenv result:', result);
+console.log('Current working directory:', process.cwd());
+console.log('Env file path:', path.resolve(process.cwd(), '.env'));
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+
+// Debug: Check if environment variables are loaded
+console.log('Environment variables check:');
+console.log('EMAIL_USER:', process.env.EMAIL_USER ? 'SET' : 'NOT SET');
+console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');
+console.log('NODE_ENV:', process.env.NODE_ENV);
 
 const app = express();
 app.use(express.json());
@@ -64,7 +80,6 @@ app.use((req, res, next) => {
   server.listen({
     port,
     host: "0.0.0.0",
-    reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
   });

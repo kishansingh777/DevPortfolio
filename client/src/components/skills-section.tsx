@@ -7,10 +7,10 @@ export default function SkillsSection() {
       icon: "fas fa-laptop-code",
       color: "text-code-accent",
       skills: [
-        { name: "Angular", level: 90 },
+        { name: "Angular", level: 80 },
         { name: "JavaScript", level: 85 },
         { name: "HTML/CSS", level: 95 },
-        { name: "React", level: 75 },
+        { name: "React", level: 40 },
       ]
     },
     {
@@ -19,9 +19,9 @@ export default function SkillsSection() {
       color: "text-terminal-green",
       skills: [
         { name: ".NET", level: 88 },
-        { name: "Node.js", level: 82 },
-        { name: "Express.js", level: 80 },
-        { name: "Python", level: 70 },
+        { name: "Node.js", level: 70 },
+        { name: "Express.js", level: 70 },
+        { name: "Python", level: 60 },
       ]
     },
     {
@@ -30,8 +30,8 @@ export default function SkillsSection() {
       color: "text-syntax-purple",
       skills: [
         { name: "SQL Server", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "MySQL", level: 75 },
+        { name: "MySQL", level: 80 },
+        { name: "MongoDB", level: 75 },
         { name: "PostgreSQL", level: 65 },
       ]
     }

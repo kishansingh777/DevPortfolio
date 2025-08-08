@@ -27,15 +27,40 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message Sent!",
+          description: result.message,
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "Error",
+          description: result.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -95,10 +120,10 @@ export default function ContactSection() {
               <div className="mt-8 pt-8 border-t border-code-accent/20">
                 <p className="text-gray-400 font-mono text-sm mb-4">Connect with me</p>
                 <div className="flex space-x-4">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-code-accent/20 rounded-lg flex items-center justify-center text-code-accent hover:bg-code-accent hover:text-code-bg transition-all duration-300">
+                  <a href="https://github.com/kishansingh777" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-code-accent/20 rounded-lg flex items-center justify-center text-code-accent hover:bg-code-accent hover:text-code-bg transition-all duration-300">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-syntax-blue/20 rounded-lg flex items-center justify-center text-syntax-blue hover:bg-syntax-blue hover:text-white transition-all duration-300">
+                  <a href="https://www.linkedin.com/in/kishan-singh-478818179" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-syntax-blue/20 rounded-lg flex items-center justify-center text-syntax-blue hover:bg-syntax-blue hover:text-white transition-all duration-300">
                     <i className="fab fa-linkedin"></i>
                   </a>
                   <a href="mailto:kishansingh98337@gmail.com" className="w-10 h-10 bg-terminal-green/20 rounded-lg flex items-center justify-center text-terminal-green hover:bg-terminal-green hover:text-code-bg transition-all duration-300">
@@ -125,7 +150,7 @@ export default function ContactSection() {
                     type="text"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-code-bg/80 border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300"
+                    className="w-full bg-code-secondary border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300 placeholder:text-gray-400"
                     placeholder="Your name"
                     required
                   />
@@ -139,7 +164,7 @@ export default function ContactSection() {
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-code-bg/80 border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300"
+                    className="w-full bg-code-secondary border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300 placeholder:text-gray-400"
                     placeholder="your.email@domain.com"
                     required
                   />
@@ -153,7 +178,7 @@ export default function ContactSection() {
                     type="text"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full bg-code-bg/80 border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300"
+                    className="w-full bg-code-secondary border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300 placeholder:text-gray-400"
                     placeholder="Project discussion"
                   />
                 </div>
@@ -166,7 +191,7 @@ export default function ContactSection() {
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full bg-code-bg/80 border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300 resize-none"
+                    className="w-full bg-code-secondary border border-code-accent/30 rounded-lg px-4 py-3 text-white font-mono focus:border-code-accent focus:outline-none focus:ring-2 focus:ring-code-accent/20 transition-all duration-300 resize-none placeholder:text-gray-400"
                     placeholder="Let's discuss your project..."
                     required
                   />

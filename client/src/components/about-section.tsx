@@ -27,7 +27,7 @@ export default function AboutSection() {
               </p>
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center p-4 bg-code-bg/50 rounded-lg">
-                  <div className="text-2xl font-bold text-code-accent">2+</div>
+                  <div className="text-2xl font-bold text-code-accent">1+</div>
                   <div className="text-gray-400 font-mono text-sm">Years Experience</div>
                 </div>
                 <div className="text-center p-4 bg-code-bg/50 rounded-lg">
@@ -48,7 +48,7 @@ export default function AboutSection() {
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-code-accent rounded-full"></div>
                   <h3 className="font-semibold text-white">MSc in Information Technology</h3>
                   <p className="text-gray-400 font-mono text-sm">Thakur College Of Science and Commerce</p>
-                  <p className="text-terminal-green">2023 - 2025 | SGPA: 7.8</p>
+                  <p className="text-terminal-green">2023 - 2025 | SGPA: 7.0</p>
                 </div>
                 <div className="border-l-2 border-terminal-green pl-6 relative">
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-terminal-green rounded-full"></div>
